@@ -65,7 +65,7 @@ export const OpenAIStream = async (
           : [{ role: 'system', content: systemPrompt }]),
         ...messages,
       ],
-      max_completion_tokens: (model.tokenLimit - tokenCount),
+      max_completion_tokens: model.completionTokenLimit,
       temperature: isBeta(model.id) ? 1 : temperature,
       stream: isStream,
     }),
